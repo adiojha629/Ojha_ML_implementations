@@ -10,7 +10,7 @@ import pandas as pd #for data stripping
 import numpy as np #for math operations
 import matplotlib.pyplot as plt #For graphing the data
 
-data = pd.read_csv('data.csv') #Import the data
+data = pd.read_csv('data.csv',header = None) #Import the data
 X = data.iloc[:, 0] #Variable X gets all the x values (values in first column)
 Y = data.iloc[:, 1] #Variable Y gets all y values (values in second column)
 
@@ -30,7 +30,10 @@ for x,y in zip(X,Y):
 m = m_numerator / m_denominator #Slope
 c = Y_mean - m*X_mean #Y-intercept
 
-print("Slope is " + str(m) + ", Y-intercept is " + str(c))
+
+star_string = "\n************\n"
+print(star_string+"Least Squares Regression Line" +star_string)
+print(star_string+"Slope is " + str(m) + ", Y-intercept is " + str(c)+star_string)
 
 Y_pred = m*X + c
 
