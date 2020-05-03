@@ -25,7 +25,7 @@ m_denominator = 0
 
 for x,y in zip(X,Y):
     m_numerator += (x-X_mean)*(y-Y_mean)
-    m_denominator += (x-X_mean)**2
+    m_denominator += (x-X_mean)*(x-X_mean)
     
 m = m_numerator / m_denominator #Slope
 c = Y_mean - m*X_mean #Y-intercept
